@@ -30,9 +30,9 @@ Jennifer Walker
 ### Credits
 
 Some portions of this workshop are adapted from or inspired by the following instructional materials:
-- [Data Insights with Python for Beginners](https://github.com/ladieslearningcode/llc-intro-to-python) (Copyright [Ladies Learning Code](https://www.canadalearningcode.ca/program/ladies-learning-code/) | [CC BY 4.0 license][CC4 license])
-- [U of T Coders Data Carpentry Workshop](https://github.com/UofTCoders/2018-09-10-utoronto) (Copyright [U of T Coders][UT Coders] / [Software Carpentry][Software Carpentry] | [CC BY 4.0 license][CC4 license])
-- [Python for Ecologists](http://www.datacarpentry.org/python-ecology-lesson/) (Copyright [Software Carpentry][Software Carpentry] | [CC BY 4.0 license][CC4 license])
+- [Data Insights with Python for Beginners](https://github.com/ladieslearningcode/llc-intro-to-python) (Copyright [Ladies Learning Code](https://www.canadalearningcode.ca/program/ladies-learning-code/)  [CC BY 4.0 license][CC4 license])
+- [U of T Coders Data Carpentry Workshop](https://github.com/UofTCoders/2018-09-10-utoronto) (Copyright [U of T Coders][UT Coders] / [Software Carpentry][Software Carpentry]  [CC BY 4.0 license][CC4 license])
+- [Python for Ecologists](http://www.datacarpentry.org/python-ecology-lesson/) (Copyright [Software Carpentry][Software Carpentry]  [CC BY 4.0 license][CC4 license])
 
 [Software Carpentry]: http://software-carpentry.org/
 [UT Coders]: https://github.com/UofTCoders
