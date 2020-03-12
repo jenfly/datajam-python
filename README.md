@@ -2,6 +2,10 @@
 
 ## Vancouver Datajam 2020 Workshop
 
+### Skill Level: Beginner
+
+To get the most out of this workshop, you'll want to be already comfortable with Python basics. You do not need any prior experience with Pandas or any other libraries.
+
 
 ### Slides
 
