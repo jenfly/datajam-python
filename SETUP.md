@@ -27,27 +27,23 @@ Click "Download" on the **[Anaconda download page](https://www.anaconda.com/down
 
 #### 2. Install Plotly (Optional)
 
-We may be using the `plotly` library briefly, depending on time.
-
-<details>
-  <summary><span style="cursor: pointer; color: #506784 !important">Click to expand instructions!</span></summary>
+We may be using the `plotly` library briefly, depending on time. To install, follow the instructions below, otherwise **[jump to the next step](#navigator_test)**.
   
-  - If you're on Windows, look for a newly installed program called "Anaconda Prompt" and run it to open up a console similar to the screenshot below. If you're on a Mac, look for a program called "Terminal" in the Launchpad, and run it to open a console window.
+If you're on Windows, look for a newly installed program called "Anaconda Prompt" and run it to open up a console similar to the screenshot below. If you're on a Mac, look for a program called "Terminal" in the Launchpad, and run it to open a console window.
     
-  ![console](img/console.png)
+![console](img/console.png)
     
-  - In either the Windows or the Mac version of the console, type the following command, press `Enter`, and follow the prompts to update all libraries.
-  ```
-  conda update --all
-  ```
+In either the Windows or the Mac version of the console, type the following command, press `Enter`, and follow the prompts to update all libraries.
+```
+conda update --all
+```
     
-  - Then type the following command, press `Enter`, and follow the prompts to install `plotly`:
-  ```
-  conda install -c plotly plotly=4.9.0
-  ```
-  
-</details>
+Then type the following command, press `Enter`, and follow the prompts to install `plotly`:
+```
+conda install -c plotly plotly=4.9.0
+```
 
+<a id="navigator_test"></a>
 #### 3. Test Your Installation
 
 Look for a newly installed program called "Anaconda Navigator" in your computer's menu, and click to open it. It might take a minute to initialize, and a few other windows might open and close while it's doing so, this is all normal. A window similar to the screenshot below should open up. If so, you're all set! You can exit by selecting File-> Quit from the top menu.
