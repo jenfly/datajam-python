@@ -52,7 +52,7 @@ We may be using the `plotly` library briefly, depending on time.
 
 Look for a newly installed program called "Anaconda Navigator" in your computer's menu, and click to open it. It might take a minute to initialize, and a few other windows might open and close while it's doing so, this is all normal. A window similar to the screenshot below should open up. If so, you're all set! You can exit by selecting File-> Quit from the top menu.
 
-![Anaconda Navigator](img/screenshots/navigator.png)
+![Anaconda Navigator](img/navigator.png)
 
 [back to workshop main page](https://jenfly.github.io/datajam-python/)
 
