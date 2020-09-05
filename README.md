@@ -9,14 +9,11 @@ To get the most out of this workshop, you'll want to be already comfortable with
 
 ### Slides
 
-You can view the workshop slides online at [bitly link].
+Coming soon!
 
 ### Setup
 
-You’ll want to bring your laptop for lots of hands-on practice as we work through the lessons and exercises. We'll be using Python 3.7, JupyterLab, Pandas, Seaborn, and Plotly.
-
-Please make sure to download and install the required software on your laptop prior to the workshop. For setup instructions, please **[click here](https://jenfly.github.io/datajam-python/SETUP)**.
-
+We'll be using Python 3.8, Jupyter Notebook, Pandas, Seaborn, and Plotly. You can work through the lessons and exercises online, without installing any software on the computer (see the workshop document for info). If you'd like to install Python on your computer, please **[click here](https://jenfly.github.io/datajam-python/SETUP)** for instructions.
 
 
 ### Instructor
