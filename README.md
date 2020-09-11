@@ -1,3 +1,5 @@
+![welcome](img/beginnerpython.png)
+
 # Intro to Data Analysis with Python
 
 ## Vancouver Datajam 2020 Workshop
