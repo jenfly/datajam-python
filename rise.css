@@ -36,7 +36,7 @@ body.rise-enabled div.output_subarea.output_text.output_error {
 /* -------- displaying dataframes
 */
 body.rise-enabled table.dataframe {
-  font-size: 80%;
+  font-size: 110%;
 }
 body.rise-enabled table.dataframe > thead > tr > th {
   text-align: left;
@@ -73,6 +73,21 @@ body.rise-enabled .title-slide {
 
 }
 
+
+/* Headers */
+
+body.rise-enabled h1 {
+    font-size: 260%
+}
+
+
+body.rise-enabled h2 {
+    font-size: 220%
+}
+
+body.rise-enabled h3 {
+    font-size: 190%
+}
 
 
 /* Block quotes */
