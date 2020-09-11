@@ -9,7 +9,7 @@ This beginner level workshop will introduce data analysis with Python, focusing 
 
 ### Lessons
 
-The lessons are available online [here](https://nbviewer.jupyter.org/github/jenfly/datajam-python/blob/master/0-jupyter.ipynb).
+The lessons are available online **[here](https://jenfly.github.io/datajam-python/0-jupyter.html)**.
 
 ### Setup
 
