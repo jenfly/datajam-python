@@ -33,12 +33,7 @@ If you're on Windows, look for a newly installed program called "Anaconda Prompt
     
 ![console](img/console.png)
     
-In either the Windows or the Mac version of the console, type the following command, press `Enter`, and follow the prompts to update all libraries.
-```
-conda update --all
-```
-    
-Then type the following command, press `Enter`, and follow the prompts to install `plotly`:
+In either the Windows or the Mac version of the console, type the following command, press `Enter`, and follow the prompts to install `plotly`.
 ```
 conda install -c plotly plotly=4.9.0
 ```
@@ -69,12 +64,8 @@ If you're on Windows, look for a newly installed program called "Anaconda Prompt
     
   ![console](img/console.png)
     
-In either the Windows or the Mac version of the console, type the following command, press `Enter`, and follow the prompts to update all libraries.
-```
-conda update --all
-```
-    
-Then type the following command, press `Enter`, and follow the prompts to install the additional libraries you'll need for the workshop:
+In either the Windows or the Mac version of the console, type the following command, press `Enter`, and follow the prompts to install the additional libraries you'll need for the workshop:
+
 ```
 conda install -c conda-forge -c plotly notebook numpy pandas matplotlib seaborn ipywidgets plotly=4.9.0
 ```
