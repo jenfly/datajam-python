@@ -35,7 +35,7 @@ If you're on Windows, look for a newly installed program called "Anaconda Prompt
     
 In either the Windows or the Mac version of the console, type the following command, press `Enter`, and follow the prompts to install `plotly`.
 ```
-conda install -c plotly plotly=4.9.0
+conda install -c plotly plotly
 ```
 
 <a id="navigator_test"></a>
@@ -67,7 +67,7 @@ If you're on Windows, look for a newly installed program called "Anaconda Prompt
 In either the Windows or the Mac version of the console, type the following command, press `Enter`, and follow the prompts to install the additional libraries you'll need for the workshop:
 
 ```
-conda install -c conda-forge -c plotly notebook numpy pandas matplotlib seaborn ipywidgets plotly=4.9.0
+conda install -c conda-forge -c plotly notebook numpy pandas matplotlib seaborn ipywidgets plotly
 ```
 
 <a id="test"></a>
