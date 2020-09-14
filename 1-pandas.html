@@ -15255,18 +15255,18 @@ Name: year, dtype: int64</pre>
 Latin America and the Caribbean    406
 Western Asia                       252
 Southern Europe                    168
-South-eastern Asia                 140
 Eastern Europe                     140
+South-eastern Asia                 140
 Northern Europe                    140
 Southern Asia                      126
 Western Europe                      98
 Northern Africa                     84
-Eastern Asia                        70
 Central Asia                        70
+Eastern Asia                        70
 Melanesia                           56
-Northern America                    28
 Polynesia                           28
 Australia and New Zealand           28
+Northern America                    28
 Micronesia                          14
 Name: sub_region, dtype: int64</pre>
 </div>
@@ -17558,7 +17558,7 @@ Name: life_expectancy, Length: 2492, dtype: bool</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>For simple aggregations, we can use the <code>groupby()</code> method chained with a summary statistic (e.g., <code>sum()</code>, <code>mean()</code>, <code>median()</code>, <code>max()</code>, etc.)</p>
-<p>We will group by <code>region</code>, select the <code>population</code> column, and take the sum:</p>
+<p>We will group by <code>region</code>, select the <code>pop_millions</code> column, and take the sum:</p>
 
 </div>
 </div>
@@ -17568,7 +17568,7 @@ Name: life_expectancy, Length: 2492, dtype: bool</pre>
 <div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">world_2015</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;region&#39;</span><span class="p">)[</span><span class="s1">&#39;population&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">world_2015</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;region&#39;</span><span class="p">)[</span><span class="s1">&#39;pop_millions&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -17588,12 +17588,12 @@ Name: life_expectancy, Length: 2492, dtype: bool</pre>
 
 <div class="output_text output_subarea output_execute_result">
 <pre>region
-Africa      1191917700
-Americas     982688900
-Asia        4391635000
-Europe       740483000
-Oceania       38486000
-Name: population, dtype: int64</pre>
+Africa      1191.9177
+Americas     982.6889
+Asia        4391.6350
+Europe       740.4830
+Oceania       38.4860
+Name: pop_millions, dtype: float64</pre>
 </div>
 
 </div>
@@ -17621,7 +17621,7 @@ Name: population, dtype: int64</pre>
 <div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">world_2015</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;region&#39;</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s1">&#39;population&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">world_2015</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;region&#39;</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s1">&#39;pop_millions&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -17658,34 +17658,34 @@ Name: population, dtype: int64</pre>
     <tr style="text-align: right;">
       <th></th>
       <th>region</th>
-      <th>population</th>
+      <th>pop_millions</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
       <td>Africa</td>
-      <td>1191917700</td>
+      <td>1191.9177</td>
     </tr>
     <tr>
       <th>1</th>
       <td>Americas</td>
-      <td>982688900</td>
+      <td>982.6889</td>
     </tr>
     <tr>
       <th>2</th>
       <td>Asia</td>
-      <td>4391635000</td>
+      <td>4391.6350</td>
     </tr>
     <tr>
       <th>3</th>
       <td>Europe</td>
-      <td>740483000</td>
+      <td>740.4830</td>
     </tr>
     <tr>
       <th>4</th>
       <td>Oceania</td>
-      <td>38486000</td>
+      <td>38.4860</td>
     </tr>
   </tbody>
 </table>
@@ -17791,7 +17791,7 @@ Name: population, dtype: int64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Bonus:-Fancier-Aggregation">Bonus: Fancier Aggregation<a class="anchor-link" href="#Bonus:-Fancier-Aggregation">&#182;</a></h2><p>We can compute sub-totals by grouping on multiple columns:</p>
+<p>We can aggregate multiple columns at once. For example, let's find the mean life expectancy and GDP per capita in each region.</p>
 
 </div>
 </div>
@@ -17801,7 +17801,7 @@ Name: population, dtype: int64</pre>
 <div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">world_2015</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;region&#39;</span><span class="p">,</span> <span class="s1">&#39;income_group&#39;</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s1">&#39;population&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">world_2015</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;region&#39;</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)[[</span><span class="s1">&#39;life_expectancy&#39;</span><span class="p">,</span> <span class="s1">&#39;gdp_per_capita&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -17838,118 +17838,40 @@ Name: population, dtype: int64</pre>
     <tr style="text-align: right;">
       <th></th>
       <th>region</th>
-      <th>income_group</th>
-      <th>population</th>
+      <th>life_expectancy</th>
+      <th>gdp_per_capita</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
       <td>Africa</td>
-      <td>High</td>
-      <td>93700</td>
+      <td>63.650000</td>
+      <td>5305.961538</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>Africa</td>
-      <td>Low</td>
-      <td>543587000</td>
+      <td>Americas</td>
+      <td>75.377419</td>
+      <td>15782.580645</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>Africa</td>
-      <td>Lower middle</td>
-      <td>537797000</td>
+      <td>Asia</td>
+      <td>73.772340</td>
+      <td>19755.744681</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>Africa</td>
-      <td>Upper middle</td>
-      <td>110440000</td>
+      <td>Europe</td>
+      <td>78.594872</td>
+      <td>31872.307692</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>Americas</td>
-      <td>High</td>
-      <td>426630900</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Americas</td>
-      <td>Low</td>
-      <td>10700000</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>Americas</td>
-      <td>Lower middle</td>
-      <td>32050000</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>Americas</td>
-      <td>Upper middle</td>
-      <td>513308000</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>Asia</td>
-      <td>High</td>
-      <td>246100000</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>Asia</td>
-      <td>Low</td>
-      <td>141750000</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>Asia</td>
-      <td>Lower middle</td>
-      <td>2259347000</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>Asia</td>
-      <td>Upper middle</td>
-      <td>1744438000</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>Europe</td>
-      <td>High</td>
-      <td>493125000</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>Europe</td>
-      <td>Lower middle</td>
-      <td>48770000</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>Europe</td>
-      <td>Upper middle</td>
-      <td>198588000</td>
-    </tr>
-    <tr>
-      <th>15</th>
       <td>Oceania</td>
-      <td>High</td>
-      <td>28410000</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>Oceania</td>
-      <td>Lower middle</td>
-      <td>8884000</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>Oceania</td>
-      <td>Upper middle</td>
-      <td>1192000</td>
+      <td>68.900000</td>
+      <td>11932.222222</td>
     </tr>
   </tbody>
 </table>
@@ -17962,10 +17884,23 @@ Name: population, dtype: int64</pre>
 </div>
 
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can use the <code>agg</code> method to compute multiple aggregated statistics on our data, for example minimum and maximum country populations in each region:</p>
+<h2 id="Bonus:-Fancier-Aggregation">Bonus: Fancier Aggregation<a class="anchor-link" href="#Bonus:-Fancier-Aggregation">&#182;</a></h2><p>We can compute sub-totals by grouping on multiple columns:</p>
 
 </div>
 </div>
@@ -17975,7 +17910,7 @@ Name: population, dtype: int64</pre>
 <div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">world_2015</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;region&#39;</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s1">&#39;population&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s1">&#39;min&#39;</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">world_2015</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;region&#39;</span><span class="p">,</span> <span class="s1">&#39;income_group&#39;</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s1">&#39;pop_millions&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -18011,40 +17946,119 @@ Name: population, dtype: int64</pre>
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>min</th>
-      <th>max</th>
-    </tr>
-    <tr>
       <th>region</th>
-      <th></th>
-      <th></th>
+      <th>income_group</th>
+      <th>pop_millions</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>Africa</th>
-      <td>93700</td>
-      <td>181000000</td>
+      <th>0</th>
+      <td>Africa</td>
+      <td>High</td>
+      <td>0.0937</td>
     </tr>
     <tr>
-      <th>Americas</th>
-      <td>99900</td>
-      <td>320000000</td>
+      <th>1</th>
+      <td>Africa</td>
+      <td>Low</td>
+      <td>543.5870</td>
     </tr>
     <tr>
-      <th>Asia</th>
-      <td>418000</td>
-      <td>1400000000</td>
+      <th>2</th>
+      <td>Africa</td>
+      <td>Lower middle</td>
+      <td>537.7970</td>
     </tr>
     <tr>
-      <th>Europe</th>
-      <td>330000</td>
-      <td>144000000</td>
+      <th>3</th>
+      <td>Africa</td>
+      <td>Upper middle</td>
+      <td>110.4400</td>
     </tr>
     <tr>
-      <th>Oceania</th>
-      <td>106000</td>
-      <td>23800000</td>
+      <th>4</th>
+      <td>Americas</td>
+      <td>High</td>
+      <td>426.6309</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Americas</td>
+      <td>Low</td>
+      <td>10.7000</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Americas</td>
+      <td>Lower middle</td>
+      <td>32.0500</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Americas</td>
+      <td>Upper middle</td>
+      <td>513.3080</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Asia</td>
+      <td>High</td>
+      <td>246.1000</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Asia</td>
+      <td>Low</td>
+      <td>141.7500</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Asia</td>
+      <td>Lower middle</td>
+      <td>2259.3470</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Asia</td>
+      <td>Upper middle</td>
+      <td>1744.4380</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Europe</td>
+      <td>High</td>
+      <td>493.1250</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Europe</td>
+      <td>Lower middle</td>
+      <td>48.7700</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Europe</td>
+      <td>Upper middle</td>
+      <td>198.5880</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Oceania</td>
+      <td>High</td>
+      <td>28.4100</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Oceania</td>
+      <td>Lower middle</td>
+      <td>8.8840</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Oceania</td>
+      <td>Upper middle</td>
+      <td>1.1920</td>
     </tr>
   </tbody>
 </table>
@@ -18060,7 +18074,7 @@ Name: population, dtype: int64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can also use <code>agg</code> to compute different statistics for different columns:</p>
+<p>We can use the <code>agg</code> method to compute multiple aggregated statistics on our data, for example minimum and maximum country populations in each region:</p>
 
 </div>
 </div>
@@ -18070,9 +18084,7 @@ Name: population, dtype: int64</pre>
 <div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">agg_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;population&#39;</span> <span class="p">:</span> <span class="s1">&#39;sum&#39;</span><span class="p">,</span> 
-            <span class="s1">&#39;life_expectancy&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;min&#39;</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">]}</span>
-<span class="n">world_2015</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;region&#39;</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">agg_dict</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">world_2015</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;region&#39;</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s1">&#39;pop_millions&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s1">&#39;min&#39;</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -18100,6 +18112,103 @@ Name: population, dtype: int64</pre>
         vertical-align: top;
     }
 
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>min</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>region</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Africa</th>
+      <td>0.0937</td>
+      <td>181.0</td>
+    </tr>
+    <tr>
+      <th>Americas</th>
+      <td>0.0999</td>
+      <td>320.0</td>
+    </tr>
+    <tr>
+      <th>Asia</th>
+      <td>0.4180</td>
+      <td>1400.0</td>
+    </tr>
+    <tr>
+      <th>Europe</th>
+      <td>0.3300</td>
+      <td>144.0</td>
+    </tr>
+    <tr>
+      <th>Oceania</th>
+      <td>0.1060</td>
+      <td>23.8</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can also use <code>agg</code> to compute different statistics for different columns:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">agg_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;pop_millions&#39;</span> <span class="p">:</span> <span class="s1">&#39;sum&#39;</span><span class="p">,</span> 
+            <span class="s1">&#39;life_expectancy&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;min&#39;</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">]}</span>
+<span class="n">world_2015</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;region&#39;</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">agg_dict</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[46]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
     .dataframe thead tr th {
         text-align: left;
     }
@@ -18109,7 +18218,7 @@ Name: population, dtype: int64</pre>
     <tr>
       <th></th>
       <th>region</th>
-      <th>population</th>
+      <th>pop_millions</th>
       <th colspan="2" halign="left">life_expectancy</th>
     </tr>
     <tr>
@@ -18124,35 +18233,35 @@ Name: population, dtype: int64</pre>
     <tr>
       <th>0</th>
       <td>Africa</td>
-      <td>1191917700</td>
+      <td>1191.9177</td>
       <td>49.6</td>
       <td>77.4</td>
     </tr>
     <tr>
       <th>1</th>
       <td>Americas</td>
-      <td>982688900</td>
+      <td>982.6889</td>
       <td>63.9</td>
       <td>81.7</td>
     </tr>
     <tr>
       <th>2</th>
       <td>Asia</td>
-      <td>4391635000</td>
+      <td>4391.6350</td>
       <td>57.9</td>
       <td>83.8</td>
     </tr>
     <tr>
       <th>3</th>
       <td>Europe</td>
-      <td>740483000</td>
+      <td>740.4830</td>
       <td>70.8</td>
       <td>83.1</td>
     </tr>
     <tr>
       <th>4</th>
       <td>Oceania</td>
-      <td>38486000</td>
+      <td>38.4860</td>
       <td>60.5</td>
       <td>82.6</td>
     </tr>
