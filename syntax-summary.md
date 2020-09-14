@@ -176,6 +176,12 @@ Scatter plot:
 world_2015.plot(x='gdp_per_capita', y='life_expectancy', kind='scatter');
 ```
 
+Saving a plot:
+```python
+ax = region_pop.plot(x='region', y='pop_millions', kind='bar');
+ax.get_figure().savefig('region_populations.png', bbox_inches='tight')
+```
+
 ## Statistical Plots with Seaborn
 
 Import library:
@@ -222,6 +228,15 @@ g = sns.catplot(data=world_2015, x='region', y='life_expectancy', kind='bar', as
 g.set(title='Mean Life Expectancy by Region in 2015');
 ```
 
+Saving a plot:
+```python
+g = sns.relplot(data=world_2015, x='gdp_per_capita', y='life_expectancy', hue='region',
+                size='pop_millions', sizes=(40, 400), alpha=0.8)
+g.set(xscale='log', title='Life Expectancy vs. GDP per Capita in 2015');
+g.savefig('life_exp_vs_gdp_percap.png')
+```
+
+
 ## Interactive Plots with Plotly
 
 Import Plotly Express:
@@ -255,6 +270,20 @@ px.scatter(data_frame=world, x='gdp_per_capita', y='life_expectancy', color='reg
            size='pop_millions', size_max=30, log_x=True, range_y=(20, 90),
            title='Life Expectancy vs. GDP per Capita (1950-2015)',
            animation_frame='year')
+```
+
+Saving a figure:
+
+```python
+fig = px.scatter(data_frame=world_2015, x='gdp_per_capita', y='life_expectancy', color='region',
+                 size='pop_millions', size_max=30, log_x=True, hover_data=['country'],
+                 title='Life Expectancy vs. GDP per Capita in 2015')
+
+# Save to HTML (interactive)
+fig.write_html('plotly_life_exp_vs_gdp_percap.html')
+
+# Save as a static PNG image
+fig.write_image('plotly_life_exp_vs_gdp_percap.png')
 ```
 
 ---
