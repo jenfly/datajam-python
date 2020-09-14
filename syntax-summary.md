@@ -258,7 +258,8 @@ Example scatter plot with facets:
 ```python
 px.scatter(data_frame=world_2015, x='gdp_per_capita', y='life_expectancy', 
            facet_col='region', facet_col_wrap=3,
-           color='income_group', category_orders={'income_group' : income_order},
+           color='income_group', 
+           category_orders={'income_group' : ['Low', 'Lower middle', 'Upper middle', 'High']},
            log_x=True, hover_data=['country'],
            title='Life Expectancy vs. GDP per Capita in 2015')
 ```
