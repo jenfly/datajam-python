@@ -5,7 +5,7 @@ We will be using a program called Jupyter as our development environment for the
 > Note: Any existing system-wide Python installation on your computer won't be affected by installing Anaconda/Miniconda with the recommended default settings, as the distribution will be self-contained within your home directory.
 
 
-Below are a few different options for setting up your computer. You'll want to have the software installed and working properly before the workshop starts. Sometimes a few minor tweaks are needed to get the software working on different systems, so if you have any problems please email me (jenfly [at] gmail [dot] com) or ask for help at the workshop.
+Below are a few different options for setting up your computer. You'll want to have the software installed and working properly before the workshop starts. Sometimes a few minor tweaks are needed to get the software working on different systems, so if you have any problems please message me on Discord or ask for help at the workshop.
 
 
 We have three options for this step. Jump to:
@@ -16,12 +16,12 @@ We have three options for this step. Jump to:
 <a id="anaconda"></a>
 ### Option A: Full Anaconda Distribution
 
-This option is the easiest to set up and start using. The full Anaconda distribution includes Python, Jupyter, and hundreds of other popular scientific libraries&mdash;you'll immediately have access to all these libraries without having to find and install them yourself. With this option, you can use the graphical interface (Anaconda Navigator) to launch JupyterLab and manage libraries, or you can work from the command line, if you prefer.
+This option is the easiest to set up and start using. The full Anaconda distribution includes Python, Jupyter, and hundreds of other popular scientific libraries&mdash;you'll immediately have access to all these libraries without having to find and install them yourself. With this option, you can use the graphical interface (Anaconda Navigator) to launch Jupyter notebook and manage libraries, or you can work from the command line, if you prefer.
 
 
 #### 1. Download and Install Anaconda
 
-Click "Download" on the **[Anaconda download page](https://www.anaconda.com/download/)** and select the Python 3.8 installer for your operating system (Windows users, if you're unsure whether you have 64-bit or 32-bit version of Windows, [follow these instructions to find out](https://support.microsoft.com/en-ca/help/15056/windows-32-64-bit-faq)).  After the download finishes, run the installer, making sure to use all the recommended default settings. We won't be using Microsoft Visual Studio Code, so when the installer asks if you want to install it, you can just click "Skip". For more details on the intallation steps, you can check out the instructions for [Windows](https://docs.anaconda.com/anaconda/install/windows), [Mac](https://docs.anaconda.com/anaconda/install/mac-os), or [Linux](http://docs.anaconda.com/anaconda/install/linux/).
+Click "Download" on the **[Anaconda download page](https://www.anaconda.com/download/)** and select the Python 3.8 installer for your operating system (Windows users, if you're unsure whether you have 64-bit or 32-bit version of Windows, [follow these instructions to find out](https://support.microsoft.com/en-ca/help/15056/windows-32-64-bit-faq)).  After the download finishes, run the installer, making sure to use all the recommended default settings. We won't be using Microsoft Visual Studio Code, so if the installer asks if you want to install it, you can just click "Skip". For more details on the intallation steps, you can check out the instructions for [Windows](https://docs.anaconda.com/anaconda/install/windows), [Mac](https://docs.anaconda.com/anaconda/install/mac-os), or [Linux](http://docs.anaconda.com/anaconda/install/linux/).
 
 > Note: The Windows installer says 3 GB free space is required, but on my computer I found that the software uses almost double that. These numbers might be a bit different on Mac or Linux.
 
@@ -56,7 +56,7 @@ If you want a more minimal installation and are comfortable working from the com
 
 #### 1. Download and Install Miniconda
 
-Download the **Python 3.8 version** for your operating system from the **[Miniconda download page](https://conda.io/miniconda.html)** and run the installer, making sure to use all the recommended default settings. This installation is much quicker than the full Anaconda distribution and will probably only take a few minutes.
+Download the latest Python version for your operating system from the **[Miniconda download page](https://conda.io/miniconda.html)** and run the installer, making sure to use all the recommended default settings. This installation is much quicker than the full Anaconda distribution and will probably only take a few minutes.
 
 #### 2. Install Additional Libraries
 
