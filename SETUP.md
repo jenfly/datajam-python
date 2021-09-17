@@ -75,12 +75,12 @@ conda install -c conda-forge -c plotly jupyterlab notebook numpy pandas matplotl
 
 From the console, run the following command:
 ```
-jupyter notebook
+jupyter lab
 ```
 
 A new tab should open in your web browser, similar to the screenshot below. If so, you're all set! You can exit by clicking the Quit button on the top right.
 
-![notebook_dash](img/notebook_dash.png)
+![notebook_dash](img/jupyterlab.png)
 
 [back to workshop main page](https://jenfly.github.io/datajam-python/)
 
@@ -89,7 +89,7 @@ A new tab should open in your web browser, similar to the screenshot below. If s
 <a id="pip"></a>
 ### Option C: pip
 
-If you already use `pip` and prefer to use it for package management, go forth and do your thing! You’ll want an environment with Python 3.8, `notebook`, `ipywidgets`, `numpy`, `pandas`, `matplotlib`, `seaborn`, and `plotly`. To test your installation, follow the [instructions above](#test).
+If you already use `pip` and prefer to use it for package management, go forth and do your thing! You’ll want an environment with Python 3.8, `jupyterlab`, `notebook`, `ipywidgets`, `numpy`, `pandas`, `matplotlib`, `seaborn`, and `plotly`. To test your installation, follow the [instructions above](#test).
 
 
 [back to workshop main page](https://jenfly.github.io/datajam-python/)
