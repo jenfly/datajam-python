@@ -64,6 +64,12 @@ body.rise-enabled div.container {
     text-align: center;
 }
 */
+
+.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+    font-family: "Lato", sans-serif;
+    text-transform: none;
+}
+
 body.rise-enabled .title-slide {
     color: #586e75;
     font-family: "Lato", sans-serif;
@@ -76,6 +82,7 @@ body.rise-enabled .title-slide {
 
 /* Headers */
 
+/*
 body.rise-enabled h1 {
     font-size: 260%
 }
@@ -88,6 +95,7 @@ body.rise-enabled h2 {
 body.rise-enabled h3 {
     font-size: 190%
 }
+*/
 
 
 /* Block quotes */
