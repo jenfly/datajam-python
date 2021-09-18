@@ -179,7 +179,7 @@ world_2015.plot(x='gdp_per_capita', y='life_expectancy', kind='scatter');
 Saving a plot:
 ```python
 ax = region_pop.plot(x='region', y='pop_millions', kind='bar');
-ax.get_figure().savefig('region_populations.png', bbox_inches='tight')
+ax.get_figure().savefig('figures/region_populations.png', bbox_inches='tight')
 ```
 
 ## Statistical Plots with Seaborn
@@ -193,7 +193,7 @@ import seaborn as sns
 Switch to `seaborn` default aesthetics:
 
 ```python
-sns.set()
+sns.set_theme()
 ```
 
 Example scatter plot with axes customization:
@@ -233,7 +233,7 @@ Saving a plot:
 g = sns.relplot(data=world_2015, x='gdp_per_capita', y='life_expectancy', hue='region',
                 size='pop_millions', sizes=(40, 400), alpha=0.8)
 g.set(xscale='log', title='Life Expectancy vs. GDP per Capita in 2015');
-g.savefig('life_exp_vs_gdp_percap.png')
+g.savefig('figures/life_exp_vs_gdp_percap.png')
 ```
 
 
@@ -281,10 +281,10 @@ fig = px.scatter(data_frame=world_2015, x='gdp_per_capita', y='life_expectancy',
                  title='Life Expectancy vs. GDP per Capita in 2015')
 
 # Save to HTML (interactive)
-fig.write_html('plotly_life_exp_vs_gdp_percap.html')
+fig.write_html('figures/plotly_life_exp_vs_gdp_percap.html')
 
 # Save as a static PNG image
-fig.write_image('plotly_life_exp_vs_gdp_percap.png')
+fig.write_image('figures/plotly_life_exp_vs_gdp_percap.png')
 ```
 
 ---
