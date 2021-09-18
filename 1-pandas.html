@@ -14271,7 +14271,6 @@ a.anchor-link {
 <li>Basic data manipulation operations:<ul>
 <li>Select columns and rows of a data table</li>
 <li>Create new columns based on existing columns in a data table</li>
-<li>Sorting (optional - if time allows)</li>
 <li>Grouping and aggregation</li>
 </ul>
 </li>
@@ -15529,10 +15528,31 @@ memory usage: 253.2+ KB
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Exercise-1.1">Exercise 1.1<a class="anchor-link" href="#Exercise-1.1">&#182;</a></h2><p>a) Based on the output of <code>world.info()</code>, what data type is the <code>pop_density</code> column?</p>
-<p>b) Based on the output of <code>world.describe()</code>, what are the minimum and maximum years in this data?</p>
+<h2 id="Exercise-1.1">Exercise 1.1<a class="anchor-link" href="#Exercise-1.1">&#182;</a></h2><p>a) Initial setup (you can skip to part b if you've already done this):</p>
+<ul>
+<li>Import the <code>pandas</code> library</li>
+<li>Use <code>pandas.read_csv()</code> to read data from <code>'https://raw.githubusercontent.com/jenfly/datajam-python/master/data/gapminder.csv'</code> and store it in a DataFrame called <code>world</code>.</li>
+</ul>
+<p>b) Based on the output of <code>world.info()</code>, what data type is the <code>pop_density</code> column?</p>
+<p>c) Based on the output of <code>world.describe()</code>, what are the minimum and maximum years in this data?</p>
+<blockquote><p>For b) and c) you can create a Markdown cell in your notebook and write your answer there.</p>
+</blockquote>
 
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
@@ -15550,7 +15570,7 @@ memory usage: 253.2+ KB
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">world</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;gapminder_world_data.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">world</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;data/gapminder_world_data.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15561,14 +15581,18 @@ memory usage: 253.2+ KB
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<blockquote><p>By default, the <code>to_csv()</code> method will save the DataFrame's index as an additional column in the CSV file. To turn this off, we use the keyword argument <code>index=False</code>.</p>
-</blockquote>
+<ul>
+<li><p>This creates a file called <code>gapminder_world_data.csv</code> within the <code>data</code> sub-folder</p>
+</li>
+<li><p>By default, the <code>to_csv()</code> method will save the DataFrame's index as an additional column in the CSV file. To turn this off, we use the keyword argument <code>index=False</code>.</p>
+</li>
+</ul>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Check out your new file in the Jupyter text editor or a spreadsheet program such as Excel!</p>
+<p>Let's check out our new file in the JupyterLab CSV viewer!</p>
 
 </div>
 </div>
@@ -15583,7 +15607,7 @@ memory usage: 253.2+ KB
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">world2</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;gapminder_world_data.csv&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">world2</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/gapminder_world_data.csv&#39;</span><span class="p">)</span>
 <span class="n">world2</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
@@ -16435,18 +16459,18 @@ Name: year, dtype: int64</pre>
 Latin America and the Caribbean    406
 Western Asia                       252
 Southern Europe                    168
-Eastern Europe                     140
 South-eastern Asia                 140
+Eastern Europe                     140
 Northern Europe                    140
 Southern Asia                      126
 Western Europe                      98
 Northern Africa                     84
-Central Asia                        70
 Eastern Asia                        70
+Central Asia                        70
 Melanesia                           56
-Polynesia                           28
 Australia and New Zealand           28
 Northern America                    28
+Polynesia                           28
 Micronesia                          14
 Name: sub_region, dtype: int64</pre>
 </div>
@@ -17910,6 +17934,20 @@ Name: life_expectancy, Length: 2492, dtype: bool</pre>
 <p>c) Use the <code>unique()</code> method on the <code>country</code> column to display the list of unique countries in the <code>americas</code> DataFrame.</p>
 
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
@@ -18184,7 +18222,7 @@ Name: life_expectancy, Length: 2492, dtype: bool</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Sorting">Sorting<a class="anchor-link" href="#Sorting">&#182;</a></h2><ul>
+<h2 id="Bonus:-Sorting">Bonus: Sorting<a class="anchor-link" href="#Bonus:-Sorting">&#182;</a></h2><ul>
 <li>It's often convenient to have data in a sorted form</li>
 <li>We can sort a DataFrame based on the values in a column</li>
 <li>We can also use sorting to answer questions about the extreme (highest / lowest) values in our data</li>
@@ -19091,6 +19129,13 @@ Name: pop_millions, dtype: float64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<blockquote><p>Note: For a more careful analysis, a population-weighted mean would be preferred in the above calculation, to account for the differences in population among countries. Computing a <a href="https://www.statisticshowto.com/probability-and-statistics/statistics-definitions/weighted-mean/">weighted mean</a> within a <code>pandas</code> aggregation is a bit more involved and beyond the scope of this lesson, so we'll just use the mean.</p>
+</blockquote>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Bonus:-Fancier-Aggregation">Bonus: Fancier Aggregation<a class="anchor-link" href="#Bonus:-Fancier-Aggregation">&#182;</a></h2><p>We can compute sub-totals by grouping on multiple columns:</p>
 
 </div>
@@ -19482,9 +19527,28 @@ Name: pop_millions, dtype: float64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Exercise-1.3">Exercise 1.3<a class="anchor-link" href="#Exercise-1.3">&#182;</a></h2><p>Working with the original DataFrame <code>world</code> (containing all years), group by year and compute the world total population in each year.</p>
+<h2 id="Exercise-1.3">Exercise 1.3<a class="anchor-link" href="#Exercise-1.3">&#182;</a></h2><p>For this exercise we're working with the original DataFrame <code>world</code> (containing all years).</p>
+<p>a) Initial setup (you can skip to part b if you've already done this):</p>
+<ul>
+<li>Compute the population in millions: divide <code>world['population']</code> by <code>1e6</code> and assign the result to <code>world['pop_millions']</code>. </li>
+</ul>
+<p>b) Group the DataFrame <code>world</code> by year and compute the world total population (in millions) in each year.</p>
 
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
